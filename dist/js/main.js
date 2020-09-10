@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //menu
+  const dinamicBg = () => {
+    const menu = document.querySelector('menu');
+    let top = window.pageYOffset;
+    if(top !== 0){}
+      
+    
+    console.log(top);
+  };
+  dinamicBg();
   // webp
   const webP = () => {
     function testWebP(callback) {

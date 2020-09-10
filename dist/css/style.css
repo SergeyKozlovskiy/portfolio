@@ -144,6 +144,11 @@ main {
   width: 50px !important;
 }
 
+.contact-icons {
+  width: 40px;
+  height: 40px;
+}
+
 @media (max-width: 991px) {
   .profile__img {
     width: 100%;
@@ -175,11 +180,47 @@ main {
     border-spacing: 0 15px;
   }
 }
+
+@media (max-width: 576px) {
+  menu ul li a {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  .profile__name {
+    font-size: 33px;
+  }
+
+  .profile__img {
+    display: none;
+  }
+
+  .contact-icon {
+    width: 35px !important;
+  }
+
+  .contact-icons {
+    width: 25px;
+    height: 25px;
+  }
+}
 @supports (-webkit-appearance:none){
 
 }
 
  @media (max-width: 991px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 576px){
 
 @supports (-webkit-appearance:none){
 
