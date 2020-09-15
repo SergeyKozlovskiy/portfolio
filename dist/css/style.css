@@ -20,22 +20,38 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto-Regular";
-  font-size: 18px;
+  font-size: 16px;
 }
 
 p {
   margin: 0;
+  color: grey;
 }
 
-menu {
+section {
+  margin-top: 70px;
+}
+
+.header {
+  font-size: 30px;
+  margin: 0;
+  color: grey;
+  margin-bottom: 30px;
+}
+
+.menu {
   position: fixed;
-  margin-top: 53px;
-  padding: 0;
+  height: 60px;
+  padding-top: 1.5%;
   width: 100%;
   z-index: 100;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0;
 }
 
-menu ul {
+.menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +63,7 @@ menu ul {
           justify-content: space-between;
 }
 
-menu ul li {
+.menu ul li {
   list-style-type: none;
   font-size: 14px;
   text-transform: uppercase;
@@ -56,7 +72,7 @@ menu ul li {
   color: white;
 }
 
-menu ul li a {
+.menu ul li a {
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -67,7 +83,7 @@ menu ul li a {
   letter-spacing: 0.5px;
 }
 
-menu ul li a:hover {
+.menu ul li a:hover {
   color: #82cdcc;
 }
 
@@ -83,6 +99,21 @@ menu ul li a:hover {
   bottom: 0;
   right: 0px;
   background-color: #82cdcc;
+}
+
+.menu__2 {
+  background-color: white;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.menu__2 ul li {
+  color: grey;
+}
+
+.menu__2 ul li a {
+  color: grey;
 }
 
 main {
@@ -149,6 +180,18 @@ main {
   height: 40px;
 }
 
+.hello__btn {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: grey;
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
 @media (max-width: 991px) {
   .profile__img {
     width: 100%;
@@ -192,7 +235,7 @@ main {
   }
 
   .profile__name {
-    font-size: 33px;
+    font-size: 30px;
   }
 
   .profile__img {
@@ -208,6 +251,41 @@ main {
     height: 25px;
   }
 }
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  section {
+    margin-top: 30px;
+  }
+
+  .header {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .menu {
+    padding-left: 0;
+    height: 30px;
+  }
+
+  .menu ul {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu ul li a {
+    padding-right: 0;
+  }
+
+  .profile {
+    padding-top: 50px;
+  }
+}
 @supports (-webkit-appearance:none){
 
 }
@@ -221,6 +299,14 @@ main {
 }
 
  @media (max-width: 576px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 480px){
 
 @supports (-webkit-appearance:none){
 

@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //menu
+  //menu bg
   const dinamicBg = () => {
     const menu = document.querySelector('menu');
     let top = window.pageYOffset;
-    if(top !== 0){}
-      
-    
-    console.log(top);
-  };
+    if(top !== 0){
+      menu.classList.add('menu__2');
+    }else if(top === 0){
+      menu.classList.remove('menu__2');
+    }
+    window.addEventListener('scroll', dinamicBg);
+    };
   dinamicBg();
   // webp
   const webP = () => {
@@ -48,8 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let arr = elements[i].textContent.split("");
       words.push(arr);
     });
-
-    
   // проверяем виден ли объект пользователю
     let visible = (target, i) => {
   // Все позиции элемента
@@ -78,16 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
       target.textContent += `${words[i][j]}`;
       j++;
       if(j === words[i].length){
-        target.classList.remove('dynamic-text');
         clearInterval(timerid);
+        target.classList.remove('dynamic-text');
+        words[i] = '';
       }
-
-    
     };
     let timerid = setInterval(tipe, 100);
-
-    console.log(words[i].length);
-  } else {
+    } else {
     // Если элемент не видно, то запускаем этот код
     console.clear();
   }
@@ -98,11 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Запускаем функцию при прокрутке страницы
-    window.addEventListener('scroll', function() {
-    for (let i = 0; i < elements.length; i++){
-      visible(elements[i], i);
-    }
-  });      
+  //   window.addEventListener('scroll', function() {
+  //   for (let i = 0; i < elements.length; i++){
+  //     visible(elements[i], i);
+  //   }
+  // });      
   };
   tipped();
 
