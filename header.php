@@ -73,14 +73,3 @@
         </div>
       </div>
     </main>
-  <section class="hello">
-    <div class="container">
-      <h2 class="dynamic-text header">Hello_</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rerum veniam, eum sapiente nihil sint, soluta illo corrupti dolore id atque ab est architecto voluptas adipisci ipsam necessitatibus quis, eligendi quas itaque. Delectus dolorum asperiores aperiam dignissimos laboriosam odit odio quae ad maxime reprehenderit sunt corporis perspiciatis praesentium dolores aut sint vel neque, distinctio repudiandae consectetur laudantium exercitationem, error, vitae velit. Neque architecto labore minus quis itaque animi impedit dolores magni quod dolor corporis amet recusandae modi voluptatum, accusamus officiis nam? Nulla, quia ipsa. Eum id molestias dolore temporibus eius, minima, ullam rerum veritatis laudantium quos exercitationem, provident doloremque voluptatem?</p>
-      <a class="hello__btn" href="#">Download</a>
-    </div>
-  </section>  
-  
-  <script src="js/main.js"></script>
-  </body>
-</html>
