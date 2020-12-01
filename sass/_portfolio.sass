@@ -1,57 +1,44 @@
 .portfolio
-    &-block
+    &-menu
+        margin: 0
+        padding-left: 0
+        list-style-type: none
+        margin-bottom: 60px
+        li
+            display: inline 
+.wrapper
+    display: flex !important
+    outline: none
+   
+.slider
+    width: 700px
+    margin: 0 auto
+    outline: none
+.slider-block
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: none
+    &:nth-child(1)
+        margin-right: 20px
+        width: 40%
+    &:nth-child(2)  
+        width: 60%  
+        
 
-        .wrapper
-            outline: none 
-            display: flex !important       
-            overflow: hidden
-        &s
-            display: inline-block
-            width: 50%
-            &_subtitle
-                font-size: 22px
-                color: $mainColor
-                transition: 0.3s
-                margin-bottom: 10px
-            img
-                width: 100% 
-            &_text
-                position: absolute
-                left: 0
-                top: 50%
-                transform: translate(0px, -50%)  
-                transition: 0.4s
+    img
+        width: 100%
+    &_text
+        margin-bottom: 20px
+        width: 100%   
+    &_link
+        text-decoration: none
+        outline: none           
 
-            &_links
-                position: absolute
-                left: 50%
-                top: 50%
-                opacity: 0
-                transform: translate(1000px, -50%)  !important
-                transition: 0.4s
-                a
-                    display: block
-                    text-decoration: none
-                    color: $mainColor
-                    outline: none
-                    cursor: pointer
-                    margin-bottom: 5px
-                    &:hover
-                        color: red
-.block-text
-    display: flex
-    align-items: center 
-    position: relative
-    margin-left: 10px
-    &:hover
-        .portfolio-blocks_links
-            transform: translate(-50%, -50%)  !important
-            opacity: 1
-        .portfolio-blocks_text
-            opacity: 0
-            transform: translate(1000px, -50%)  
-        .portfolio-blocks_subtitle
-            color: red   !important   
+.active-slider
+    opacity: 1 !important
+.active
+    color: green            
 @media (max-width: 400px)
     .portfolio-blocks_subtitle
         font-size: 18px

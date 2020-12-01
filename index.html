@@ -167,60 +167,40 @@
     <div class="container">
       <h2 class="header dynamic-text">Portfolio_</h2>
 
-      <div class="portfolio-block">
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">WordPress</div>
-            <img src="img/mokap.png" alt="WordPress">
-          </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
+        <ul class="portfolio-menu">
+          <li class="active">WordPress</li>
+          <li>JavaScript</li>
+          <li>Landing Page</li>
+        </ul>
+
+        <div class="slider active-slider">
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dolor!</p>
+              <a href="" class="slider-block_link">link</a>
             </div>
           </div>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, dolorem quam! Laudantium delectus illo officia excepturi eius architecto, neque rerum, eum iusto, amet libero. Tenetur ipsum architecto deleniti unde asperiores.</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+
+
+
         </div>
 
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">Landing Page</div>
-            <img src="img/dizain-seozom.png" alt="WordPress">
-          </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">JavaScript</div>
-            <img src="img/dizain-seozom.png" alt="WordPress">
-          </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
-            </div>
-          </div>
-        </div>
+
 
       </div>
 
@@ -231,11 +211,12 @@
 
   
 
-  <script src="js/main.js" ></script>
+  <script src="js/main.js"></script>
   <script src="js/progressBar.js" ></script>
   <script src="js/tipped.js" ></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.min.js"></script> 
+  <script src="js/slick.min.js"></script> 
+
 
   <script>
     const newBar = new RoundedProgressBar({
@@ -308,10 +289,16 @@
     });
     animateTipe.init('.dynamic-text');
   </script>
+   
     <script type="text/javascript">
       $(document).ready(function(){
-        $('.portfolio-block').slick({
-          
+        $('.slider').slick({
+          infinite: true,
+          speed: 1000,
+          fade: true,
+          cssEase: 'linear',
+          autoplay: true, 
+          autoplaySpeed: 5000
         });
       });
     </script>
