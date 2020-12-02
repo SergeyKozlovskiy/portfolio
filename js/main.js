@@ -44,24 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.addEventListener('click', (event) => {
      let target = event.target;
-     console.log(target.closest(".portfolio-block-list"));
-     if(target.closest(".portfolio-block-list")){
-       let el = document.querySelector('.active');
-       el.classList.remove('active');
+     if(target.closest(".portfolio-menu")){
+       let menu = document.querySelector('.active');
+       menu.classList.remove('active');
        target.classList.add('active');
-       console.log(target.textContent);
+       
+       let sliders = document.querySelectorAll('.slider');
 
-
-
-       let block = document.querySelectorAll('.portfolio-blocks_subtitle');
-       block.forEach(el => {
-        if(target.textContent === el.textContent){
-          let wrapper = document.querySelectorAll('.wrapper');
-          wrapper.forEach(el => {
-            el.classList.remove('active-menu');
-          })
-          el.closest('.wrapper').classList.add('active-menu');
-        }
+       sliders.forEach(slider => {
+          slider.classList.remove('active-slider');
+          if(slider.getAttribute('id') === target.textContent){
+            slider.classList.add('active-slider');
+            console.log('совпадение');
+          }
+          
        })
      
      }

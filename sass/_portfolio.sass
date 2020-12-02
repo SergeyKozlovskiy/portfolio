@@ -6,11 +6,15 @@
         margin-bottom: 60px
         li
             display: inline 
+            cursor: pointer
+            &:hover
+                color: red
 .wrapper
     display: flex !important
     outline: none
    
 .slider
+    display: none !important
     width: 700px
     margin: 0 auto
     outline: none
@@ -36,9 +40,24 @@
         outline: none           
 
 .active-slider
-    opacity: 1 !important
+    display: block !important
 .active
-    color: green            
+    color: green   
+
+.arrows
+    display: block
+    position: absolute
+    width: 24px
+    top: 50%    
+    
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+        transform: scale(1.2)
+.left
+    left: -10%
+.right
+    right: -10%               
 @media (max-width: 400px)
     .portfolio-blocks_subtitle
         font-size: 18px

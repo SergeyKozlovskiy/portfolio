@@ -173,7 +173,7 @@
           <li>Landing Page</li>
         </ul>
 
-        <div class="slider active-slider">
+        <div id="WordPress" class="slider active-slider">
 
           <div class="wrapper">
             <div class="slider-block">
@@ -199,6 +199,49 @@
 
         </div>
 
+        <div id="JavaScript" class="slider">
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">JavaScript JavaScript JavaScript JavaScript JavaScript</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">JavaScript JavaScript</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="Landing Page" class="slider">
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Landing Page Landing Page Landing Page Landing Page</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Landing Page Landing Page</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -294,11 +337,14 @@
       $(document).ready(function(){
         $('.slider').slick({
           infinite: true,
-          speed: 1000,
+          speed: 600,
           fade: true,
           cssEase: 'linear',
           autoplay: true, 
-          autoplaySpeed: 5000
+          autoplaySpeed: 5000,
+          
+          prevArrow: '<div class="left arrows"><img src="img/arrow-left.png" alt=""></div>',
+          nextArrow: '<div class="right arrows"><img src="img/arrow-right.png" alt=""></div>',
         });
       });
     </script>
