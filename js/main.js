@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("body").classList.add("no-webp");
       }
     });
-    const links = document.querySelectorAll("ul>li>a");
+    const links = document.querySelectorAll(".menu-link");
     links.forEach((el) => {
       el.addEventListener("mouseover", () => {
         el.classList.add("active-link");

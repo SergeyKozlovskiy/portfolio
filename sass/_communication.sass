@@ -1,0 +1,67 @@
+.communication
+    padding-bottom: 40px
+    &-contacts
+        vertical-align: top
+        display: inline-block
+        width: 49%
+        ul
+            padding-left: 0
+            li
+                list-style-type: none
+                margin-bottom: 15px
+                .communication-contacts-phone
+                    text-decoration: none
+                    outline: none
+                    cursor: pointer
+                    color: $mainColor
+    &-form 
+        display: inline-block
+        width: 49%
+        &_button
+            padding: 10px 15px
+            width: 60%
+            border: 1px solid black
+            outline: none
+            cursor: pointer
+            border-radius: 50px
+            margin-top: 20px
+
+        form
+            input
+                width: 100%
+                position: relative
+                padding: 10px 15px
+                display: block 
+                margin-bottom: 10px
+                outline: none
+                border: none
+                border-bottom: 1px solid $mainColor 
+                transition: 0.3s
+                &:focus
+                    border-bottom: 1px solid black
+                   
+
+.wrapper-input
+    position: relative
+    width: 60%
+    &::after
+        display: block
+        position: absolute
+        content: ''
+        width: 100%
+        height: 1px
+        background-color: red
+        bottom: 0
+        left: 0
+        transition: 0.3s
+        z-index: 0
+        transform: scaleX(0)
+    &:hover
+        &::after
+            transform: scaleX(1)
+                   
+                    
+                
+                            
+                               
+
