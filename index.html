@@ -10,7 +10,8 @@
     <title>Portfolio</title>
   </head>
   <body>
-    <!-- @@include('_new.html') -->
+    <script src="js/jquery.min.js"></script> 
+   
   <menu class="menu">
       <div class="container">
         <ul>
@@ -262,11 +263,11 @@
         </ul>
       </div>
       <div class="communication-form">
-        <form class="contact-form" id="form" method="POST" enctype="multipart/form-data">
+        <form class="contact-form" enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'send.php')">
          <div class="wrapper-input"><input name="name" type="text" class="contact-form__input" placeholder="Введите ваше имя"></div>         
           <div class="wrapper-input"><input name="tel" type="tel" class="contact-form__input" placeholder="Введите ваш телефон"></div>
           <div class="wrapper-input"><input name="email" type="email" class="contact-form__input" placeholder="Введите ваш email"></div>
-          <div class="wrapper-input"><textarea name="message" class="contact-form__input" placeholder="Введите вашe сообщение"></textarea></div>
+          <div class="wrapper-input"><textarea name="text" type="text" class="contact-form__input" placeholder="Введите вашe сообщение"></textarea></div>
           <button class="communication-form_button" type="submit">SEND</button>
         </form>
 
@@ -277,7 +278,7 @@
   <script src="js/main.js"></script>
   <script src="js/progressBar.js" ></script>
   <script src="js/tipped.js"></script>
-  <script src="js/jquery.min.js"></script> 
+  
   <script src="js/slick.min.js"></script> 
 
   <script>
