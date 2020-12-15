@@ -1,5 +1,9 @@
 .communication
+    padding-top: 40px
     padding-bottom: 40px
+    background-color: $mainColor
+    &-header
+        color: white
     &-contacts
         vertical-align: top
         display: inline-block
@@ -7,58 +11,52 @@
         ul
             padding-left: 0
             li
+                color: white
                 list-style-type: none
                 margin-bottom: 15px
                 .communication-contacts-phone
                     text-decoration: none
                     outline: none
                     cursor: pointer
-                    color: $mainColor
+                    color: white
     &-form 
         display: inline-block
         width: 49%
         &_button
+            outline: none
+            border: none
             padding: 10px 15px
             width: 60%
-            border: 1px solid black
             outline: none
             cursor: pointer
             border-radius: 50px
             margin-top: 20px
 
-        form
-            input
+        .contact-form
+            &__input
                 width: 100%
                 position: relative
                 padding: 10px 15px
                 display: block 
                 margin-bottom: 10px
                 outline: none
-                border: none
-                border-bottom: 1px solid $mainColor 
+                border: 1px solid white 
+                border-radius: 3px
                 transition: 0.3s
-                &:focus
-                    border-bottom: 1px solid black
+                background: transparent
+                color: white
+                cursor: pointer
+                resize: none
+                &::placeholder
+                    color: white
+                &:hover
+                     border-radius: 5px
                    
 
 .wrapper-input
     position: relative
     width: 60%
-    &::after
-        display: block
-        position: absolute
-        content: ''
-        width: 100%
-        height: 1px
-        background-color: red
-        bottom: 0
-        left: 0
-        transition: 0.3s
-        z-index: 0
-        transform: scaleX(0)
-    &:hover
-        &::after
-            transform: scaleX(1)
+
                    
                     
                 
