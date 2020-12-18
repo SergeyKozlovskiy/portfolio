@@ -1,5 +1,4 @@
 <?php 
-
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
@@ -30,12 +29,6 @@ $mail->addAddress('zavulon31990@gmail.com');     // Кому будет уход
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Потенциальный работодатель';
-$mail->Body    = '' .$name . ' оставил сообщение, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email. '<br>Сообщение: ' .$text;
+$mail->Body    = '' .$name . '<strong>оставил сообщение, телефон:</strong>' .$phone. '<br><strong>Почта:</strong>' .$email. '<br><strong>Сообщение:</strong>' .$text;
 $mail->AltBody = '';
-
-if(!$mail->send()) {
-    echo 'Error';
-} else {
-    header('location: thank-you.html');
-}
 ?>

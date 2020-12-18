@@ -71,73 +71,55 @@ document.addEventListener("DOMContentLoaded", () => {
   menuActive();
 
   //scroll
-  const scroll = () => {
-      
-// собираем все якоря; устанавливаем время анимации и количество кадров
-const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-animationTime = 300,
-framesCount = 20;
+  const scroll = () => {   
+  // собираем все якоря; устанавливаем время анимации и количество кадров
+  const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+  animationTime = 300,
+  framesCount = 20;
 
-anchors.forEach(function(item) {
-// каждому якорю присваиваем обработчик события
-item.addEventListener('click', function(e) {
-// убираем стандартное поведение
-e.preventDefault();
+  anchors.forEach(function(item) {
+  // каждому якорю присваиваем обработчик события
+  item.addEventListener('click', function(e) {
+  // убираем стандартное поведение
+  e.preventDefault();
 
-// для каждого якоря берем соответствующий ему элемент и определяем его координату Y
-let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+  // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+  let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
 
-// запускаем интервал, в котором
-let scroller = setInterval(function() {
-// считаем на сколько скроллить за 1 такт
-let scrollBy = coordY / framesCount;
+  // запускаем интервал, в котором
+  let scroller = setInterval(function() {
+  // считаем на сколько скроллить за 1 такт
+  let scrollBy = coordY / framesCount;
 
-// если к-во пикселей для скролла за 1 такт больше расстояния до элемента
-// и дно страницы не достигнуто
-if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-  // то скроллим на к-во пикселей, которое соответствует одному такту
-  window.scrollBy(0, scrollBy);
-} else {
-  // иначе добираемся до элемента и выходим из интервала
-  window.scrollTo(0, coordY);
-  clearInterval(scroller);
-}
-// время интервала равняется частному от времени анимации и к-ва кадров
-}, animationTime / framesCount);
-});
-});
+  // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+  // и дно страницы не достигнуто
+  if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+    // то скроллим на к-во пикселей, которое соответствует одному такту
+    window.scrollBy(0, scrollBy);
+  } else {
+    // иначе добираемся до элемента и выходим из интервала
+    window.scrollTo(0, coordY);
+    clearInterval(scroller);
+  }
+  // время интервала равняется частному от времени анимации и к-ва кадров
+  }, animationTime / framesCount);
+  });
+  });
   };
   scroll();
-  //send form
-  const sendForm = () => {
-      // Отправка данных на сервер
-      function send(event, php){
-      console.log("Отправка запроса");
-      event.preventDefault ? event.preventDefault() : event.returnValue = false;
-      var req = new XMLHttpRequest();
-      req.open('POST', php, true);
-      req.onload = function() {
-        if (req.status >= 200 && req.status < 400) {
-        json = JSON.parse(this.response); // Ебанный internet explorer 11
-            console.log(json);
-              
-            // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
-            if (json.result == "success") {
-              // Если сообщение отправлено
-              alert("Сообщение отправлено");
-            } else {
-              // Если произошла ошибка
-              alert("Ошибка. Сообщение не отправлено");
-            }
-          // Если не удалось связаться с php файлом
-          } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
 
-      // Если не удалось отправить запрос. Стоит блок на хостинге
-      req.onerror = function() {alert("Ошибка отправки запроса");};
-      req.send(new FormData(event.target));
-      }
+  const sendForm = () => {
+    const form = document.querySelector('#form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const request = new XMLHttpRequest();
+      request.open('POST', './mail.php');
+      request.setRequestHeader('Content-Type', 'multipart/form-data');
+      const formData = new FormData(form);
+      request.send(formData);
+    })
   }
   sendForm();
-});
+  });
 
 
