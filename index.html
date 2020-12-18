@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
-    <title>Portfolio</title>
+    <title>Portfolio_</title>
   </head>
   <body>
-    <!-- @@include('_new.html') -->
+  <script src="js/jquery.min.js" ></script> 
+   
   <menu class="menu">
       <div class="container">
         <ul>
-          <li><a href="#">привет</a></li>
-          <li><a href="#">резюме</a></li>
-          <li><a href="#">портфолио</a></li>
-          <li><a href="#">контакты</a></li>
+          <li class="menu-link"><a href="#Hello">Hello</a></li>
+          <li class="menu-link"><a href="#Resume">Resume</a></li>
+          <li class="menu-link"><a href="#Portfolio">Portfolio</a></li>
+          <li class="menu-link"><a href="#Contact">Contacts</a></li>
         </ul>
       </div>
   </menu>
@@ -77,14 +78,14 @@
       </div>
   </main>
 
-  <section class="hello">
+  <section id='Hello' class="hello">
     <div class="container">
       <h2 class="dynamic-text header">Hello_</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rerum veniam, eum sapiente nihil sint, soluta illo corrupti dolore id atque ab est architecto voluptas adipisci ipsam necessitatibus quis, eligendi quas itaque. Delectus dolorum asperiores aperiam dignissimos laboriosam odit odio quae ad maxime reprehenderit sunt corporis perspiciatis praesentium dolores aut sint vel neque, distinctio repudiandae consectetur laudantium exercitationem, error, vitae velit. Neque architecto labore minus quis itaque animi impedit dolores magni quod dolor corporis amet recusandae modi voluptatum, accusamus officiis nam? Nulla, quia ipsa. Eum id molestias dolore temporibus eius, minima, ullam rerum veritatis laudantium quos exercitationem, provident doloremque voluptatem?</p>
     </div>
   </section>  
 
-  <section class="resume">
+  <section id="Resume" class="resume">
     <div class="container">
       <h2 class="dynamic-text header">Resume_</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rerum veniam, eum sapiente nihil sint, soluta illo corrupti dolore id atque ab est architecto voluptas adipisci ipsam necessitatibus quis, eligendi quas itaque. Delectus dolorum asperiores aperiam dignissimos laboriosam odit odio quae ad maxime reprehenderit sunt corporis perspiciatis praesentium dolores aut sint vel neque, distinctio repudiandae consectetur laudantium exercitationem, error, vitae velit. Neque architecto labore minus quis itaque animi impedit dolores magni quod dolor corporis amet recusandae modi voluptatum, accusamus officiis nam? Nulla, quia ipsa. Eum id molestias dolore temporibus eius, minima, ullam rerum veritatis laudantium quos exercitationem, provident doloremque voluptatem?</p>
@@ -92,7 +93,7 @@
     </div>
   </section>  
 
-  <section class="education">
+  <section  class="education">
     <div class="container">
       <h2 class="dynamic-text header">Education_</h2>
       <div class="education__block">
@@ -157,64 +158,87 @@
     </div>
   </section>
 
-  <section class="portfolio">
+  <section id="Portfolio" class="portfolio">
     <div class="container">
       <h2 class="header dynamic-text">Portfolio_</h2>
 
-      <div class="portfolio-block">
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">WordPress</div>
-            <img src="img/mokap.png" alt="WordPress">
+        <ul class="portfolio-menu">
+          <li class="active">WordPress</li>
+          <li>JavaScript</li>
+          <li>Landing Page</li>
+        </ul>
+
+        <div id="WordPress" class="slider active-slider">
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dolor!</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
           </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, dolorem quam! Laudantium delectus illo officia excepturi eius architecto, neque rerum, eum iusto, amet libero. Tenetur ipsum architecto deleniti unde asperiores.</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div id="JavaScript" class="slider">
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">JavaScript JavaScript JavaScript JavaScript JavaScript</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">JavaScript JavaScript</p>
+              <a href="" class="slider-block_link">link</a>
             </div>
           </div>
         </div>
 
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">Landing Page</div>
-            <img src="img/dizain-seozom.png" alt="WordPress">
+        <div id="Landing Page" class="slider">
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Landing Page Landing Page Landing Page Landing Page</p>
+              <a href="" class="slider-block_link">link</a>
+            </div>
           </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
+
+          <div class="wrapper">
+            <div class="slider-block">
+              <img src="img/mokap.png" alt="" class="slider-block_img">
+            </div>
+            <div class="slider-block">
+              <p class="slider-block_text">Landing Page Landing Page</p>
+              <a href="" class="slider-block_link">link</a>
             </div>
           </div>
         </div>
 
-        <div class="wrapper">
-          <div class="portfolio-blocks">
-            <div class="portfolio-blocks_subtitle">JavaScript</div>
-            <img src="img/dizain-seozom.png" alt="WordPress">
-          </div>
-          <div class="portfolio-blocks block-text">
-            <p class="portfolio-blocks_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae sint alias modi dolore totam, numquam veritatis fuga ad dolorum inventore.</p>
-            <div class="portfolio-blocks_links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-            <a href="#">link3</a>
-            <a href="#">link4</a>
-            <a href="#">link5</a>
-            <a href="#">link6</a>
-            </div>
-          </div>
-        </div>
+
 
       </div>
 
@@ -222,14 +246,34 @@
     </div>
   </section>
 
+  <section id="Contact" class="communication">
+    <div class="container">
+      <h2 class="dynamic-text header communication-header">Get in touch_</h2>
+      <div class="communication-contacts">
+        <ul>
+          <li><strong>PHONE</strong> <a class="communication-contacts-phone" href="#">+7012345678</a></li>
+          <li><strong>SKYPE</strong> ivanovivanivanovich</li>
+          <li><strong>EMAIL</strong> asdasdasd@gmail.com</li>
+        </ul>
+      </div>
+      <div class="communication-form">
+        <form class="contact-form" id="form">
+         <div class="wrapper-input"><input name="name" type="text" class="contact-form__input" placeholder="Введите ваше имя"></div>         
+          <div class="wrapper-input"><input name="tel" type="tel" class="contact-form__input" placeholder="Введите ваш телефон"></div>
+          <div class="wrapper-input"><input name="email" type="email" class="contact-form__input" placeholder="Введите ваш email"></div>
+          <div class="wrapper-input"><textarea name="text" type="text" class="contact-form__input" placeholder="Введите вашe сообщение"></textarea></div>
+          <button class="communication-form_button" type="submit">SEND</button>
+        </form>
 
-  
+      </div>
+    </div>
+  </section>
 
-  <script src="js/main.js" ></script>
+  <script src="js/main.js"></script>
   <script src="js/progressBar.js" ></script>
-  <script src="js/tipped.js" ></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="js/slick.min.js"></script>
+  <script src="js/tipped.js"></script>
+  
+  <script src="js/slick.min.js"></script> 
 
   <script>
     const newBar = new RoundedProgressBar({
@@ -302,12 +346,21 @@
     });
     animateTipe.init('.dynamic-text');
   </script>
-    <script type="text/javascript">
+  <script type="text/javascript">
       $(document).ready(function(){
-        $('.portfolio-block').slick({
+        $('.slider').slick({
+          infinite: true,
+          speed: 600,
+          fade: true,
+          cssEase: 'linear',
+          autoplay: true, 
+          autoplaySpeed: 5000,
           
+          prevArrow: '<div class="left arrows"><img src="img/arrow-left.png" alt=""></div>',
+          nextArrow: '<div class="right arrows"><img src="img/arrow-right.png" alt=""></div>',
         });
       });
-    </script>
+  </script>
+
   </body>
 </html>

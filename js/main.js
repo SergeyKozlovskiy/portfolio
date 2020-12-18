@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("body").classList.add("no-webp");
       }
     });
-    const links = document.querySelectorAll("ul>li>a");
+    const links = document.querySelectorAll(".menu-link");
     links.forEach((el) => {
       el.addEventListener("mouseover", () => {
         el.classList.add("active-link");
@@ -39,72 +39,87 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   webP();
-
-  //tipped
-  // const tipped = () => {
-  //   // массив для хранения всех стpок с классом  dynamic-text
-  //   let words = [];
-  //   //получаем эл ты .dynamic-text
-  //   let elements = document.querySelectorAll(".dynamic-text");
-  //   elements.forEach((el, i) => {
-  //     let arr = elements[i].textContent.split("");
-  //     words.push(arr);
-  //   });
+  // menu portfolio
+  const menuActive = () => {
     
-  //   // проверяем виден ли объект пользователю
-  //   let visible = (target, i) => {
-  // // Все позиции элемента
-  // var targetPosition = {
-  //     top: window.pageYOffset + target.getBoundingClientRect().top,
-  //     left: window.pageXOffset + target.getBoundingClientRect().left,
-  //     right: window.pageXOffset + target.getBoundingClientRect().right,
-  //     bottom: window.pageYOffset + target.getBoundingClientRect().bottom
-  //   },
-  // // Получаем позиции окна
-  //   windowPosition = {
-  //     top: window.pageYOffset,
-  //     left: window.pageXOffset,
-  //     right: window.pageXOffset + document.documentElement.clientWidth,
-  //     bottom: window.pageYOffset + document.documentElement.clientHeight
-  //   };
-  // if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-  //   targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-  //   targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-  //   targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
-  //   // Если элемент полностью видно, то запускаем следующий код 
-  //   let newArr = [];
-  //   newArr.push(target.textContent);
-  //   console.log(newArr);
-  //   target.textContent = '';
-  //   let j = 0;
-  //   let tipe = () => {
-  //     target.textContent += `${words[i][j]}`;
-  //     j++;
-  //     if(j === words[i].length){
-  //       clearInterval(timerid);
-  //       target.classList.remove('dynamic-text');
-  //       console.log(i);
-  //     }
-  //     // words.splice(1,1);
-  //   };
-  //   let timerid = setInterval(tipe, 100);
-  //   } else {
-  //   // Если элемент не видно, то запускаем этот код
-  //   console.log('элемент не виден');
-  // }
-  //   };
+    document.addEventListener('click', (event) => {
+     let target = event.target;
+     if(target.closest(".portfolio-menu")){
+       let menu = document.querySelector('.active');
+       menu.classList.remove('active');
+       target.classList.add('active');
+       
+       let sliders = document.querySelectorAll('.slider');
 
-  //   for (let i = 0; i < elements.length; i++){
-  //     visible(elements[i], i);
-  //     console.log('запуск visible');
-  //   }
-  // // Запускаем функцию при прокрутке страницы
-  //   window.addEventListener('scroll', function() {
-  //     console.log(words);
-  // });      
-  // };
-  // tipped();
+       sliders.forEach(slider => {
+          slider.classList.remove('active-slider');
+          if(slider.getAttribute('id') === target.textContent){
+            slider.classList.add('active-slider');
+            console.log('совпадение');
+          }
+          
+       });
+     
+     }
+     
+     
+    
+    });
+    
+     
+  };
+  menuActive();
 
-});
+  //scroll
+  const scroll = () => {   
+  // собираем все якоря; устанавливаем время анимации и количество кадров
+  const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+  animationTime = 300,
+  framesCount = 20;
+
+  anchors.forEach(function(item) {
+  // каждому якорю присваиваем обработчик события
+  item.addEventListener('click', function(e) {
+  // убираем стандартное поведение
+  e.preventDefault();
+
+  // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+  let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+
+  // запускаем интервал, в котором
+  let scroller = setInterval(function() {
+  // считаем на сколько скроллить за 1 такт
+  let scrollBy = coordY / framesCount;
+
+  // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+  // и дно страницы не достигнуто
+  if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+    // то скроллим на к-во пикселей, которое соответствует одному такту
+    window.scrollBy(0, scrollBy);
+  } else {
+    // иначе добираемся до элемента и выходим из интервала
+    window.scrollTo(0, coordY);
+    clearInterval(scroller);
+  }
+  // время интервала равняется частному от времени анимации и к-ва кадров
+  }, animationTime / framesCount);
+  });
+  });
+  };
+  scroll();
+
+  const sendForm = () => {
+    const form = document.querySelector('#form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const request = new XMLHttpRequest();
+      request.open('POST', './mail.php');
+      request.setRequestHeader('Content-Type', 'multipart/form-data');
+      const formData = new FormData(form);
+      request.send(formData);
+    })
+  }
+  sendForm();
+  });
 
 
