@@ -108,18 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   scroll();
 
-  const sendForm = () => {
-    const form = document.querySelector('#form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const request = new XMLHttpRequest();
-      request.open('POST', './mail.php');
-      request.setRequestHeader('Content-Type', 'multipart/form-data');
-      const formData = new FormData(form);
-      request.send(formData);
-    })
-  }
-  sendForm();
+  // const sendForm = () => {
+  //   const form = document.querySelector('#form');
+  //   form.addEventListener('submit', (event) => {
+  //     event.preventDefault();
+  //     const request = new XMLHttpRequest();
+  //     request.open('POST', './mail.php');
+  //     request.setRequestHeader('Content-Type', 'multipart/form-data');
+  //     const formData = new FormData(form);
+  //     request.send(formData);
+  //   })
+  // }
+  // sendForm();
   });
 
 

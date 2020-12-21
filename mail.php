@@ -17,7 +17,6 @@ $mail->Username = 'zavulon31990@mail.ru'; // Ваш логин от почты �
 $mail->Password = 'zavulon5211'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
-
 $mail->setFrom('zavulon31990@mail.ru'); // от кого будет уходить письмо?
 $mail->addAddress('zavulon31990@gmail.com');     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
