@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   scroll();
 
+<<<<<<< HEAD
   // const sendForm = () => {
   //   const form = document.querySelector('#form');
   //   form.addEventListener('submit', (event) => {
@@ -120,6 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //   })
   // }
   // sendForm();
+=======
+
+>>>>>>> 60b57e79618fa8377fe70d65fac5052c010ca05f
   });
 
 
