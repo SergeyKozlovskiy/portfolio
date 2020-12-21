@@ -264,28 +264,30 @@
       </div>
       <div class="communication-form">
         <form class="contact-form" id="form">
-         <div class="wrapper-input"><input name="name" type="text" class="contact-form__input" placeholder="Введите ваше имя"></div>         
-          <div class="wrapper-input"><input name="tel" type="tel" class="contact-form__input" placeholder="Введите ваш телефон"></div>
-          <div class="wrapper-input"><input name="email" type="email" class="contact-form__input" placeholder="Введите ваш email"></div>
-          <div class="wrapper-input"><textarea name="text" type="text" class="contact-form__input" placeholder="Введите вашe сообщение"></textarea></div>
+         <div class="wrapper-input"><input name="name" type="text" class="contact-form__input _req" placeholder="Введите ваше имя"></div>         
+          <div class="wrapper-input"><input name="tel" type="tel" class="contact-form__input _req _tel" placeholder="Введите ваш телефон"></div>
+          <div class="wrapper-input"><input name="email" type="email" class="contact-form__input _req _email" placeholder="Введите ваш email"></div>
+          <div class="wrapper-input"><textarea name="text" type="text" class="contact-form__input _req" placeholder="Введите вашe сообщение"></textarea></div>
           <button class="communication-form_button" type="submit">SEND</button>
         </form>
-
       </div>
+    </div>
+    <div class="popup">
+      <div class="popup__error"></div>
     </div>
   </section>
 
   <script src="js/main.js"></script>
   <script src="js/progressBar.js" ></script>
   <script src="js/tipped.js"></script>
-  
   <script src="js/slick.min.js"></script> 
+  <script src="js/sendForm.js"></script>
 
   <script>
     const newBar = new RoundedProgressBar({
         rounded: '50px',
         end: 90,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar.init('.progress-bar_1');
@@ -293,7 +295,7 @@
     const newBar2 = new RoundedProgressBar({
         rounded: '50px',
         end: 80,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar2.init('.progress-bar_2');
@@ -301,7 +303,7 @@
     const newBar3 = new RoundedProgressBar({
         rounded: '50px',
         end: 65,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar3.init('.progress-bar_3');
@@ -309,7 +311,7 @@
     const newBar4 = new RoundedProgressBar({
         rounded: '50px',
         end: 80,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar4.init('.progress-bar_4');
@@ -317,7 +319,7 @@
     const newBar5 = new RoundedProgressBar({
         rounded: '50px',
         end: 70,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar5.init('.progress-bar_5');
@@ -325,7 +327,7 @@
     const newBar6 = new RoundedProgressBar({
         rounded: '50px',
         end: 70,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar6.init('.progress-bar_6');
@@ -333,7 +335,7 @@
     const newBar7 = new RoundedProgressBar({
         rounded: '50px',
         end: 80,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar7.init('.progress-bar_7');
@@ -341,7 +343,7 @@
     const newBar8 = new RoundedProgressBar({
         rounded: '50px',
         end: 60,
-        bg: 'grey',
+        bg: '#333333',
         padding : '1px 10px'
     });
     newBar8.init('.progress-bar_8');
