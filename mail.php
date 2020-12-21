@@ -1,14 +1,15 @@
 <?php 
-require_once('phpmailer/PHPMailerAutoload.php');
-$mail = new PHPMailer;
-$mail->CharSet = 'utf-8';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-$name = $_POST['name'];
-$phone = $_POST['tel'];
-$email = $_POST['email'];
-$text = $_POST['text'];
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail = new PHPMailer(true);
+$mail->CharSet = 'UTF-8';
+$mail->setLanguage('ru','phpmailer/language/');
+$mail->isHTML(true); 
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
@@ -18,16 +19,27 @@ $mail->Password = 'zavulon5211'; // Ваш пароль от почты с ко�
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 $mail->setFrom('zavulon31990@mail.ru'); // от кого будет уходить письмо?
-$mail->addAddress('zavulon31990@gmail.com');     // Кому будет уходить письмо 
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->addAddress('zavulon31990@gmail.com');     // Кому будет уходить письмо
+//Тема письма
+$mail->Subject = 'Сообщение с сайта';
 
-$mail->Subject = 'Потенциальный работодатель';
-$mail->Body    = '' .$name . '<strong>оставил сообщение, телефон:</strong>' .$phone. '<br><strong>Почта:</strong>' .$email. '<br><strong>Сообщение:</strong>' .$text;
-$mail->AltBody = '';
+//Тело письма
+$body = '<h1>Новое письмо!</h1>';
+$body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
+$body.='<p><strong>Телефон:</strong> '.$_POST['tel'].'</p>';
+$body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
+$body.='<p><strong>Сообщение:</strong> '.$_POST['text'].'</p>';
+
+$mail->Body = $body;
+
+//Отправляем
+if(!$mail->send()){
+    $message = 'Ошибка';
+}else{
+    $message = 'Ваше письмо успешно отправлено!';
+}
+
+$response = ['message' => $message];
+ header('Content-type: application/json');
+ echo json_encode($response);
 ?>

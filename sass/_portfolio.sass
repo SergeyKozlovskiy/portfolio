@@ -1,4 +1,6 @@
 .portfolio
+    position: relative
+    height: 400px
     &-menu
         margin: 0
         padding-left: 0
@@ -14,10 +16,13 @@
     outline: none
    
 .slider
-    display: none !important
+    position: absolute !important
+    transform: scale(0) translateX(-50%)
     width: 700px
-    margin: 0 auto
+    left: 50%
     outline: none
+    transition: 0.3s
+    opacity: 0
     &-block
         display: flex;
         flex-direction: column;
@@ -44,10 +49,10 @@
         outline: none           
 
 .active-slider
-    display: block !important
+   transform: scale(1) translateX(-50%)
+   opacity: 1
 .active
     color: green   
-
 .arrows
     display: block
     position: absolute

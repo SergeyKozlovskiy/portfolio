@@ -11,34 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', dinamicBg);
     };
   dinamicBg();
-  // webp
-  const webP = () => {
-    function testWebP(callback) {
-      var webP = new Image();
-      webP.onload = webP.onerror = function () {
-        callback(webP.height == 2);
-      };
-      webP.src =
-        "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-    }
-    testWebP(function (support) {
-      if (support == true) {
-        document.querySelector("body").classList.add("webp");
-      } else {
-        document.querySelector("body").classList.add("no-webp");
-      }
-    });
-    const links = document.querySelectorAll(".menu-link");
-    links.forEach((el) => {
-      el.addEventListener("mouseover", () => {
-        el.classList.add("active-link");
-      });
-      el.addEventListener("mouseout", () => {
-        el.classList.remove("active-link");
-      });
-    });
-  };
-  webP();
   // menu portfolio
   const menuActive = () => {
     
@@ -55,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
           slider.classList.remove('active-slider');
           if(slider.getAttribute('id') === target.textContent){
             slider.classList.add('active-slider');
-            console.log('совпадение');
           }
-          
        });
      
      }
@@ -69,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
      
   };
   menuActive();
-
   //scroll
   const scroll = () => {   
   // собираем все якоря; устанавливаем время анимации и количество кадров
@@ -108,22 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   scroll();
 
-<<<<<<< HEAD
-  // const sendForm = () => {
-  //   const form = document.querySelector('#form');
-  //   form.addEventListener('submit', (event) => {
-  //     event.preventDefault();
-  //     const request = new XMLHttpRequest();
-  //     request.open('POST', './mail.php');
-  //     request.setRequestHeader('Content-Type', 'multipart/form-data');
-  //     const formData = new FormData(form);
-  //     request.send(formData);
-  //   })
-  // }
-  // sendForm();
-=======
-
->>>>>>> 60b57e79618fa8377fe70d65fac5052c010ca05f
   });
 
 
