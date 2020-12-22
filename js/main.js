@@ -76,7 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   };
   scroll();
-
+  const mobMenu = () => {
+    document.addEventListener('click', (event) => {
+      let ul = document.querySelector('ul');
+      let target = event.target;
+      
+      if(target.classList.contains('menu')){
+        ul.classList.add('active_menu');
+      }else if(target.classList.contains('close')){
+        ul.classList.remove('active_menu');
+      }
+    })
+  }
+  mobMenu()
   });
 
 

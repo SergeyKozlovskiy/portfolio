@@ -12,6 +12,7 @@
         padding: 0
         width: 40%
         justify-content: space-between
+        
         li
             list-style-type: none
             font-size: 14px
@@ -49,14 +50,77 @@
                 color: $mainColor
 @media (max-width: 480px)
     .menu
-        padding-left: 0
-        height: 30px  
+        position: absolute
+        top: 15px
+        left: 15px
+        padding: 0
+        width: 30px
+        height: 2px
+        background-color: white
+        z-index: 10
+        &::after
+            content: ''
+            position: absolute
+            top: 5px
+            left: 0px
+            width: 30px
+            height: 2px
+            background-color: white
+        &::before
+            content: ''
+            position: absolute
+            top: -5px
+            left: 0px
+            width: 30px
+            height: 2px
+            background-color: white    
+
         ul
+            position: absolute
+            padding-top: 30px
+            padding-left: 40px
             justify-content: space-between
-            width: 100%  
+            flex-direction: column
+            width: 200px 
+            top: 0
+            left: 0
+            background-color: rgba(0, 0, 0, 1)
+            transition: 0.3s
+            transform: translate(-120%, -6%)
+            z-index: 100
+
+            .close
+                top: 5px
+                right: 10px
+                position: absolute
+                width: 30px
+                height: 30px
+                margin: 0
+                &::after
+                    position: absolute
+                    content: ''
+                    width: 20px
+                    height: 2px
+                    background-color: white
+                    left: 20%
+                    top: 50%
+                    transform: rotate(45deg) 
+                &::before
+                    position: absolute
+                    content: ''
+                    width: 20px
+                    height: 2px
+                    background-color: white
+                    left: 20%
+                    top: 50%
+                    transform: rotate(-45deg) 
             li
+                margin-bottom: 45px 
                 a
                     padding-right: 0 
+.active_menu
+    transform: translate(-8%, -6%) !important
+
                             
                 
             

@@ -1,6 +1,10 @@
 .hello
     &__btn
-        display: inline-block
+        position: relative
+        text-align: center
+        width: 150px
+        top: 0
+        display: block
         margin-top: 30px
         text-decoration: none
         outline: none
@@ -8,5 +12,10 @@
         background-color: $mainColor
         padding: 10px 15px
         border: 1px solid black
-        border-radius: 50px
+        border-radius: 4px
+        cursor: pointer
+        box-shadow: 0 5px 0   #161b13
+        &:active
+            top: 3px
+            box-shadow: 0 2px 0   #161b13
         
