@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }else if(target.classList.contains('close')){
         ul.classList.remove('active_menu');
       }
-    })
-  }
-  mobMenu()
+    });
+  };
+  mobMenu();
   });
 
 
