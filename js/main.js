@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   //menu bg
   const dinamicBg = () => {
-    const menu = document.querySelector('menu');
+    const menu = document.querySelector('.menu');
     let top = window.pageYOffset;
     if(top !== 0){
       menu.classList.add('menu__2');
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   dinamicBg();
   // menu portfolio
   const menuActive = () => {
-    
     document.addEventListener('click', (event) => {
      let target = event.target;
      if(target.closest(".portfolio-menu")){

@@ -2,25 +2,15 @@
     padding-top: 40px
     padding-bottom: 40px
     background-color: $mainColor
+    margin-top: 0
     &-header
         color: white
     &-contacts
         vertical-align: top
         display: inline-block
         width: 35%
-        ul
-            padding-left: 0
-            li
-                color: white
-                list-style-type: none
-                margin-bottom: 15px
-                strong
-                    letter-spacing: 2px
-                .communication-contacts-phone
-                    text-decoration: none
-                    outline: none
-                    cursor: pointer
-                    color: white
+        table
+            color: white            
     &-form 
         display: inline-block
         width: 64%
@@ -95,6 +85,23 @@
         align-items: center
 .activePopup
     transform: translate(-50%, -50%)    
+@media (max-width: 992px) 
+    .communication-form
+        width: 67%
+    .communication-contacts
+        width: 32%
+    
+    .wrapper-input, .communication-form_button
+        display: block
+        margin-left: auto
+        width: 70%  
+@media (max-width: 768px)
+    .communication-contacts
+        display: none         
+    .wrapper-input, .communication-form_button
+        width: 100%
+
+        
 
 
 
