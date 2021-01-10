@@ -20,14 +20,11 @@ class Tipped {
         this.addStrings(selector); 
         window.addEventListener('scroll', function() {
             animateTipe.addStrings(selector);
-          
-            
         }); 
     }
 
     addStrings(selector){
         let elements = document.querySelectorAll(selector);
-        console.log(elements, this);
         elements.forEach(el => {
             this.watchElements(el);
         });
@@ -42,7 +39,7 @@ class Tipped {
         bottom: window.pageYOffset + target.getBoundingClientRect().bottom
         },
     // Получаем позиции окна
-        windowPosition = {
+    windowPosition = {
         top: window.pageYOffset,
         left: window.pageXOffset,
         right: window.pageXOffset + document.documentElement.clientWidth,
@@ -71,7 +68,6 @@ class Tipped {
                 this.strings = [];
                 this.visibleElements = [];
                 this.flag = true;
-                console.log(this);
             }else{
                 this.visibleElements[i].textContent += this.strings[i][j];
                 j++;
