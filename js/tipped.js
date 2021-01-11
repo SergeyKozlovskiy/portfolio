@@ -3,7 +3,7 @@
 class Tipped {
     constructor(option){
         const {
-            speed = 100,
+            speed = 50,
             strings = [],
             visibleElements = [], 
             id = 0,
@@ -19,12 +19,8 @@ class Tipped {
     init(selector){
         this.addStrings(selector); 
         window.addEventListener('scroll', function() {
-            let elements = document.querySelectorAll(selector);
-           
-            
-          });
-    
-        
+            animateTipe.addStrings(selector);
+        }); 
     }
 
     addStrings(selector){
@@ -44,7 +40,7 @@ class Tipped {
         bottom: window.pageYOffset + target.getBoundingClientRect().bottom
         },
     // Получаем позиции окна
-        windowPosition = {
+    windowPosition = {
         top: window.pageYOffset,
         left: window.pageXOffset,
         right: window.pageXOffset + document.documentElement.clientWidth,
@@ -54,11 +50,10 @@ class Tipped {
         targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
         targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
         targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            target.classList.remove('dynamic-text');
             this.visibleElements.push(target);
             this.strings.push(target.textContent.split(''));
             target.textContent= '';
-            console.log(target);
-            target.classList.remove('dynamic-text');
         }else if(this.flag){
            this.animated();
            this.flag = false;
@@ -68,10 +63,11 @@ class Tipped {
     animated(){
         let i = 0;
         let j = 0;
-        
         let animated = () => {
             if(i === this.visibleElements.length ){
                 clearInterval(timerid);
+                this.strings = [];
+                this.visibleElements = [];
                 this.flag = true;
             }else{
                 this.visibleElements[i].textContent += this.strings[i][j];
@@ -79,9 +75,11 @@ class Tipped {
                 if(j === this.strings[i].length){
                     j = 0;
                     i++;
+                   
                 }
             }
         };
+
         let timerid = setInterval(animated, this.speed);
     }
 }

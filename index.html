@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
@@ -122,35 +122,35 @@
       <div class="skill-block">
         <div class="skill-blocks">
           <div class="skill-blocks-header">HTML5</div>
-          <div class="progress-bar_1"></div>
+          <div class="progress-bar_1 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">CSS3</div>
-          <div class="progress-bar_2"></div>
+          <div class="progress-bar_2 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">JAVASCRIPT</div>
-          <div class="progress-bar_3"></div>
+          <div class="progress-bar_3 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">JQUERY</div>
-          <div class="progress-bar_4"></div>
+          <div class="progress-bar_4 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">BOOTSTRAP 4</div>
-          <div class="progress-bar_5"></div>
+          <div class="progress-bar_5 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">GULP</div>
-          <div class="progress-bar_6"></div>
+          <div class="progress-bar_6 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">GIT</div>
-          <div class="progress-bar_7"></div>
+          <div class="progress-bar_7 empty"></div>
         </div>
         <div class="skill-blocks">
           <div class="skill-blocks-header">REACT</div>
-          <div class="progress-bar_8"></div>
+          <div class="progress-bar_8 empty"></div>
         </div>
       </div>
       
@@ -293,74 +293,10 @@
   <script src="js/slick.min.js"></script>  
   <script src="js/sendForm.js"></script>
 
-  <script>
-    const newBar = new RoundedProgressBar({
-        rounded: '50px',
-        end: 90,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar.init('.progress-bar_1');
 
-    const newBar2 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 80,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar2.init('.progress-bar_2');
-
-    const newBar3 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 65,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar3.init('.progress-bar_3');
-
-    const newBar4 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 80,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar4.init('.progress-bar_4');
-
-    const newBar5 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 70,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar5.init('.progress-bar_5');
-
-    const newBar6 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 70,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar6.init('.progress-bar_6');
-
-    const newBar7 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 80,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar7.init('.progress-bar_7');
-
-    const newBar8 = new RoundedProgressBar({
-        rounded: '50px',
-        end: 60,
-        bg: '#333333',
-        padding : '1px 10px'
-    });
-    newBar8.init('.progress-bar_8');
-  </script>
   <script>
     const animateTipe = new AnimateTipe({
-      speed : 75,
+      speed : 40,
     });
     animateTipe.init('.dynamic-text');
   </script>
