@@ -30,12 +30,12 @@ class Tipped {
     addStrings(selector){
         let elements = document.querySelectorAll(selector);
         elements.forEach(el => {
-            
             this.watchElements(el);
         });
     }
 
     watchElements(target){
+        console.log(target);
     // Все позиции элемента
     let targetPosition = {
         top: window.pageYOffset + target.getBoundingClientRect().top,
@@ -57,6 +57,7 @@ class Tipped {
             this.visibleElements.push(target);
             this.strings.push(target.textContent.split(''));
             target.textContent= '';
+            console.log(target);
             target.classList.remove('dynamic-text');
         }else if(this.flag){
            this.animated();
@@ -67,7 +68,6 @@ class Tipped {
     animated(){
         let i = 0;
         let j = 0;
-        
         
         let animated = () => {
             if(i === this.visibleElements.length ){
@@ -84,16 +84,7 @@ class Tipped {
         };
         let timerid = setInterval(animated, this.speed);
     }
-
-    // listenerWindow(selector){
-    //     window.addEventListener('scroll', function() {
-    //         console.log(AnimateTipe);
-    //         // AnimateTipe.addStrings(selector);
-    //       });
-    // }
-
 }
-
 
 class AnimateTipe extends Tipped {
     constructor(option = {}){
