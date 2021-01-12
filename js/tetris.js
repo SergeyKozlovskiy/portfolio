@@ -466,7 +466,7 @@ class AppData {
                 for (let n = 1; n < 11; n++){
                     if(document.querySelector(`[posX = "${n}"][posY = "15"]`).classList.contains('set')){
                         clearInterval(interval);
-                        modalEnd.style.transform = "translate(-50%, -50%)";
+                        modalEnd.style.transform = "translate(-50%, 0%)";
                         gameover.textContent = `Ваши очки: ${this.score}`;
                         // alert(`Игра окончена. Ваши очки: ${this.score}`);
                         break;
@@ -589,7 +589,7 @@ appData.eventListener();
 
 
 yes.addEventListener('click', () => {
-    modalEnd.style.transform = "translate(-400%, -50%)";
+    modalEnd.style.transform = "translate(-400%, 0%)";
     const excel = document.querySelectorAll('.excel');
     excel.forEach((el) => {
         el.style.background = "";
@@ -608,8 +608,10 @@ yes.addEventListener('click', () => {
 }); 
    
 no.addEventListener('click', () => {
-    modalEnd.style.transform = "translate(-400%, -50%)";
+    modalEnd.style.transform = "translate(-400%, 0%)";
     GameOver.style.transform = "scale(1)";
 });
+
+
 
 

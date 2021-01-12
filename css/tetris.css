@@ -32,7 +32,6 @@ button {
     border: none;
     outline: none;
     background: none;
-
 }
 .overlay {
     position: fixed;
@@ -107,7 +106,7 @@ button {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 5%;
+    padding: 25px;
     background: url("../img/tetris/bg-tetris.png") center center no-repeat;
     background-size: cover;
 }
@@ -174,10 +173,10 @@ button {
 input {
     display: block;
     width: 238px;
+    height: 60px;
     text-align: center;
     margin: 30px auto;
     font-size: 30px;
-    padding: 10px;
     outline: none;
     background: url("../img/tetris/score.png") center no-repeat;
     background-size: cover;
@@ -226,9 +225,9 @@ input {
     padding-top: 254px;
     padding-left: 94px;
     width: 500px;
-    top: 50%;
+    top: 30px;
     left: 50%;
-    transform: translate(-400%, -50%);
+    transform: translate(-400%, 0%);
     text-align: center;
     transition: all 0.5s;
 }
@@ -296,13 +295,11 @@ input {
     .controls, .audio {
         right: 5%;
     }
-  }
-@media (max-width: 1200px) {
     .kat {
         right: 7%;
     }
     .love-tetris{
-        top: 22%;
+        top: 20px;
     }
     .audio {
         width: 22%;
@@ -311,22 +308,21 @@ input {
     input {
         font-size: 20px;
     }
-  }
-@media (max-width: 1000px) {
     .excel{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
     .tetris{
-        width: 400px;
-        height: 720px;
+        width: 300px;
+        height: 540px;
     }
 
     .main{
-        width: 400px;
-        height: 640px;
+        width: 300px;
+        height: 480px;
     }
   }
+
 @media (max-width: 760px) {
     .modal {
         width: 300px;
@@ -345,11 +341,8 @@ input {
         font-size: 20px;
     }
 } 
+
 @media (max-width: 560px) {
-}
-@media (max-width: 480px) {
-} 
-@media (max-width:400px) {
     .gameArea {
         padding: 2%;
     }
