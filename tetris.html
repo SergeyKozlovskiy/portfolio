@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/tetris/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/tetris/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/tetris/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/tetris/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/tetris/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/tetris.css">
+    <title>TETRIS</title>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="modal">
+        <h2 class="modal-header">Выберите<br> уровень сложности</h2>
+        <div class="button easy">easy</div>
+        <div class="button normal">normal</div>
+        <div class="button hard">hard</div>
+    </div>
+
+    <div class="gameArea">
+        
+        <div class="main"></div>
+
+        <div class="controls">
+        <img class="controls-img" src="img/tetris/buttons.png" alt="кнопки">
+        </div> 
+        
+        <input type="text" readonly>
+
+        <audio controls class="audio">
+            <source src="audio/JungleBook.mp3" type="audio/ogg; codecs=vorbis">
+            <source src="audio/JurassicPark.mp3" type="audio/mpeg">
+        </audio>
+
+        <img class="girl decor-img" src="img/tetris/girl.png" alt="girl">
+        <img class="love-tetris decor-img" src="img/tetris/ilove.png" alt="i love tetris">
+        <img class="kat decor-img" src="img/tetris/cat.png" alt="kat">
+        <img class="disket decor-img" src="/img/tetris/discet.png" alt="disket">
+
+        <button class="btn-mobile left"></button>
+        <button class="btn-mobile right"></button>
+        <button class="btn-mobile top"></button>
+        <button class="btn-mobile down"></button>
+
+        <div class="modal-end">
+            <img class="modal-end-img" src="img/tetris/modal.png" alt="модалка">
+            <p class="modal-text modal-end-header">Game over!</p>
+            <p class="modal-end-score modal-text"></p>
+            <p class="modal-text">Еще раз?</p>
+            <button class="modal-text yes">Да</button>
+            <button class="modal-text no">Нет</button>
+        </div>
+        <div class="gameOver">
+            
+        </div>
+    </div>    
+
+
+<script src="js/tetris.js"></script>
+</body>
+</html>

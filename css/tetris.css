@@ -1,0 +1,426 @@
+@font-face {
+    font-family: 'tetris';
+    src: url('../fonts/tetris.eot');
+    src: url('../fonts/tetris.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/tetris.woff2') format('woff2'),
+        url('../fonts/tetris.woff') format('woff'),
+        url('../fonts/tetris.ttf') format('truetype'),
+        url('../fonts/tetris.svg#tetris') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Glasten';
+    src: url('../fonts/Glasten.eot');
+    src: url('../fonts/Glasten.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Glasten.woff2') format('woff2'),
+        url('../fonts/Glasten.woff') format('woff'),
+        url('../fonts/Glasten.ttf') format('truetype'),
+        url('../fonts/Glasten.svg#Glasten') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+    font-family: open sans;
+}
+button {
+    border: none;
+    outline: none;
+    background: none;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: url("../img/tetris/bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+.modal {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background: black;
+    color: white;
+}
+.modal-header{
+    font-family: Glasten;
+    margin-bottom: 45px;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    font-family: tetris;
+    border: 2px solid white;
+    border-radius: 13px 0px 13px 13px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s;
+    letter-spacing: 15px;
+}
+.easy {
+    border: 2px solid #00d1d5;
+}
+.easy:hover {
+    background: #00d1d5;
+}
+.normal {
+    border: 2px solid #ed5cff;
+}
+.normal:hover {
+    background:#ed5cff;
+}
+.hard {
+    border: 2px solid #01cd92;
+}
+.hard:hover {
+    background: #01cd92;
+}
+.gameArea {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 5%;
+    background: url("../img/tetris/bg-tetris.png") center center no-repeat;
+    background-size: cover;
+}
+.btn-mobile{
+    display: none;
+}
+.decor-img {
+    position: absolute;
+}
+.girl{
+    width: 22%;
+    left: 3%;
+    bottom: 0;
+}
+.kat{
+    width: 15%;
+    top: 0;
+    right: 15%;
+}
+.love-tetris {
+    width: 20%;
+    top: 9%;
+    left: 3%;
+}
+.disket {
+    width: 15%;
+    right: 3%;
+    bottom: 0;
+}
+.audio {
+    position: absolute;
+    right: 10%;
+    top: 65%;
+    outline: none;
+    cursor: pointer;
+    width: 16%;
+}
+.main {
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 700px;
+    border: 1px solid white;
+    background-size: cover;
+}
+.tetris {
+    width: 500px;
+    height: 900px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+}
+.excel {
+    width: 50px;
+    height: 50px;
+    background:black;
+}
+.figure, .set{
+    border: 1px solid white
+}
+input {
+    display: block;
+    width: 238px;
+    text-align: center;
+    margin: 30px auto;
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+    background: url("../img/tetris/score.png") center no-repeat;
+    background-size: cover;
+    border: none;
+}
+.controls {
+    position: absolute;
+    width: 16%;
+    top: 35%;
+    right: 10%;
+}
+.controls-img {
+    width: 100%;
+}
+.btn-mobile {
+    display: none !important;
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 46px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.btn-mobile img {
+    width: 100%;
+}
+.left {
+    background: url('../img/tetris/left.png') center no-repeat;
+    background-size: cover;
+}
+.right {
+    background: url('../img/tetris/right.png') center no-repeat;
+    background-size: cover;
+}
+.top {
+    background: url('../img/tetris/top.png') center no-repeat;
+    background-size: cover;
+}
+.down {
+    background: url('../img/tetris/down.png') center no-repeat;
+    background-size: cover;
+}
+.modal-end {
+    position: fixed;
+    padding-top: 254px;
+    padding-left: 94px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-400%, -50%);
+    text-align: center;
+    transition: all 0.5s;
+}
+.modal-end-img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.modal-text {
+    font-family: Glasten;
+    font-size: 20px;
+    margin: 10px 0px 0px 0px;
+}
+.modal-end-header {
+    font-size: 35px;
+    margin: 0;
+    color: red;
+}
+.yes {
+    background: url('../img/tetris/green-btn.png') center no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.no {
+    background: url('../img/tetris/red-btn.png') center no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.yes:hover, .no:hover {
+    transform: scale(1.1);
+}
+.gameOver {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('../img/tetris/game_over.jpg') center no-repeat;
+    background-size: cover;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+@media (max-width: 1400px) {
+    .modal {
+        width: 400px;
+    }
+    .button {
+        padding: 30px 0;
+    }
+    .modal-header{
+        text-align: center;
+    }
+    .controls, .audio {
+        right: 5%;
+    }
+  }
+@media (max-width: 1200px) {
+    .kat {
+        right: 7%;
+    }
+    .love-tetris{
+        top: 22%;
+    }
+    .audio {
+        width: 22%;
+        right: 2%;
+    }
+    input {
+        font-size: 20px;
+    }
+  }
+@media (max-width: 1000px) {
+    .excel{
+        width: 40px;
+        height: 40px;
+    }
+    .tetris{
+        width: 400px;
+        height: 720px;
+    }
+
+    .main{
+        width: 400px;
+        height: 640px;
+    }
+  }
+@media (max-width: 760px) {
+    .modal {
+        width: 300px;
+        height: 380px;
+    }
+    .button {
+        font-size: 18px;
+        padding: 20px 0;
+        width: 230px;
+        letter-spacing: 5px;
+    }
+    .modal-header{
+        margin-top: 0;
+        margin-bottom: 35px;
+        text-align: center;
+        font-size: 20px;
+    }
+} 
+@media (max-width: 560px) {
+}
+@media (max-width: 480px) {
+} 
+@media (max-width:400px) {
+    .gameArea {
+        padding: 2%;
+    }
+    .kat, .girl, .love-tetris, .disket, .controls {
+       display: none;
+    }
+    .excel{
+        width: 20px;
+        height: 20px;
+    }
+    .tetris{
+        width: 200px;
+        height: 360px;
+    }
+
+    .main{
+        width: 200px;
+        height: 320px;
+    }
+    .modal-header {
+        font-size: 16px;
+
+    }
+    .button {
+        width: 200px;
+        letter-spacing: 1px;
+        padding: 15px 0;
+
+    }
+    .modal {
+        height: 330px;
+    }
+    .audio {
+        width: 70%;
+        right: 0%;
+        height: 30px;
+        top: 68%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    input {
+        position: absolute;
+        width: 70px;
+        margin: 13px 0 13px 0;
+        font-size: 16px;
+        padding: 5px;
+        background: transparent;
+        color: white;
+        top: 0;
+    }
+    .top {
+        top: 77%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .btn-mobile {
+        display: block !important;
+    }
+    .left {
+        top: 88%;
+        left: 25%;
+    }
+
+    .right {
+        top: 88%;
+        right: 25%;
+    }
+
+    .down {
+        top: 88%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}        
