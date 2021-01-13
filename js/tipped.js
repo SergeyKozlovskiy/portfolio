@@ -31,7 +31,6 @@ class Tipped {
     }
 
     watchElements(target){
-        console.log(target);
     // Все позиции элемента
     let targetPosition = {
         top: window.pageYOffset + target.getBoundingClientRect().top,
