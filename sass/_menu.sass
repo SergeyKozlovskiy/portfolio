@@ -6,6 +6,8 @@
     z-index: 100
     transition: 0.3s
     margin: 0
+    &__icons
+        display: none
     ul
         display: flex
         margin: 0
@@ -29,7 +31,7 @@
                 padding-right: 25px
                 letter-spacing: 5px
                 &:hover
-                    color: #82cdcc
+                    color: #82cdcc  
 .active-link
     position: relative
     &::after
@@ -69,77 +71,87 @@
                           
 @media (max-width: 480px)
     .menu
-        position: absolute
-        top: 15px
-        left: 15px
-        padding: 0
-        width: 30px
-        height: 2px
-        background-color: white
-        z-index: 10
-        &::after
-            content: ''
-            position: absolute
-            top: 5px
-            left: 0px
-            width: 30px
-            height: 2px
-            background-color: white
-        &::before
-            content: ''
-            position: absolute
-            top: -5px
-            left: 0px
-            width: 30px
-            height: 2px
-            background-color: white    
-
+        padding-top: 10px
         ul
-            position: absolute
-            padding-top: 30px
-            padding-left: 40px
             justify-content: space-between
-            flex-direction: column
-            width: 200px 
-            top: 0
-            left: 0
-            background-color: rgba(0, 0, 0, 1)
-            transition: 0.3s
-            transform: translate(-150%, -6%)
-            z-index: 100
-            li
-                text-align: left
-            .close
-                top: 5px
-                right: 10px
-                position: absolute
-                width: 30px
-                height: 30px
-                margin: 0
-                &::after
-                    position: absolute
-                    content: ''
-                    width: 20px
-                    height: 2px
-                    background-color: white
-                    left: 20%
-                    top: 50%
-                    transform: rotate(45deg) 
-                &::before
-                    position: absolute
-                    content: ''
-                    width: 20px
-                    height: 2px
-                    background-color: white
-                    left: 20%
-                    top: 50%
-                    transform: rotate(-45deg) 
-            li
-                margin-bottom: 45px 
-                a
-                    padding-right: 0 
-.active_menu
-    transform: translate(-8%, -6%) !important
+        &-link
+            a
+                font-size: 11px
+                font-weight: 300
+                letter-spacing: 2px !important
+                
+//     .menu
+//         position: absolute
+//         top: 15px
+//         left: 15px
+//         padding: 0
+//         width: 30px
+//         height: 2px
+//         background-color: white
+//         z-index: 10
+//         &::after
+//             content: ''
+//             position: absolute
+//             top: 5px
+//             left: 0px
+//             width: 30px
+//             height: 2px
+//             background-color: white
+//         &::before
+//             content: ''
+//             position: absolute
+//             top: -5px
+//             left: 0px
+//             width: 30px
+//             height: 2px
+//             background-color: white    
+
+//         ul
+//             position: absolute
+//             padding-top: 30px
+//             padding-left: 40px
+//             justify-content: space-between
+//             flex-direction: column
+//             width: 200px 
+//             top: 0
+//             left: 0
+//             background-color: rgba(0, 0, 0, 1)
+//             transition: 0.3s
+//             transform: translate(-150%, -6%)
+//             z-index: 100
+//             li
+//                 text-align: left
+//             .close
+//                 top: 5px
+//                 right: 10px
+//                 position: absolute
+//                 width: 30px
+//                 height: 30px
+//                 margin: 0
+//                 &::after
+//                     position: absolute
+//                     content: ''
+//                     width: 20px
+//                     height: 2px
+//                     background-color: white
+//                     left: 20%
+//                     top: 50%
+//                     transform: rotate(45deg) 
+//                 &::before
+//                     position: absolute
+//                     content: ''
+//                     width: 20px
+//                     height: 2px
+//                     background-color: white
+//                     left: 20%
+//                     top: 50%
+//                     transform: rotate(-45deg) 
+//             li
+//                 margin-bottom: 45px 
+//                 a
+//                     padding-right: 0 
+// .active_menu
+//     transform: translate(-8%, -6%) !important
 
                             
                 

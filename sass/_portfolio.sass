@@ -7,10 +7,24 @@
         list-style-type: none
         margin-bottom: 60px
         li
+            position: relative
             display: inline 
             cursor: pointer
+            font-weight: 700
+            &:after
+                    content: ''
+                    position: absolute
+                    bottom: -3px
+                    left: 0
+                    width: 100%
+                    height: 1px
+                    background-color: $mainColor
+                    transform: scale(0)
+                    transition: 0.3s
             &:hover
-                color: red
+                &::after
+                    transform: scale(1)
+                
 .wrapper
     display: flex !important
     outline: none
@@ -30,29 +44,32 @@
         outline: none
         &:nth-child(1)
             margin-right: 20px
-            width: 40%
+            width: 30%
         &:nth-child(2)  
-            width: 60% 
+            width: 70% 
         &_link
             margin-top: 15px
             text-decoration: none
             outline: none
-            cursor: pointer     
-        
+            cursor: pointer 
+        &_text
+            width: 100% 
+            &__header
+                font-size: 23px
+                margin-bottom: 10px
+        &_link              
     img
         width: 100%
-    &_text
-        margin-bottom: 20px
-        width: 100%   
-    &_link
-        text-decoration: none
-        outline: none           
-
+       
 .active-slider
    transform: scale(1) translateX(-50%)
    opacity: 1
 .active
-    color: green   
+    color: red
+    &::after
+        transform: scale(1) !important
+        background-color: red !important
+           
 .arrows
     display: block
     position: absolute
@@ -62,7 +79,7 @@
     transition: 0.3s
     transform: translateY(-50%) scale(1.2)
     &:hover
-        transform: translateY(-50%) scale(1.2)
+        transform: translateY(-50%) scale(1.4)
 .left
     left: -10%
 .right
@@ -86,11 +103,15 @@
     .arrows
         width: 16px     
 @media (max-width: 560px)  
-        .slider
-            width: 80%     
+    .portfolio
+        height: 340px
+    .slider
+        width: 80%     
 @media (max-width: 400px)
     .portfolio-blocks_subtitle
         font-size: 18px
+    .portfolio
+        height: 290px    
                                    
                 
                 
