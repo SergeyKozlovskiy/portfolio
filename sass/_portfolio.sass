@@ -103,10 +103,23 @@
     .slider
         width: 80%     
 @media (max-width: 400px)
-    .portfolio-blocks_subtitle
-        font-size: 18px
     .portfolio
-        height: 290px    
+        height: 250px
+        &-menu
+            margin-bottom: 0px 
+    .slider
+        &-block
+            height: 153px
+            &_link
+                margin: 10px auto 0
+            &_text
+                &__header
+                    font-size: 18px 
+            &:nth-child(1)
+                margin-right: 10px
+            &:nth-child(2)
+                text-align: left           
+
                                    
                 
                 
